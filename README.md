@@ -1,36 +1,57 @@
-# Churn Predictor
+# Pacers Store Customer Churn Prediction
 
-This project explores customer churn prediction using synthetic retail transaction data.
+Machine learning project that predicts whether a customer will stop purchasing from the Pacers team store within the next 90 days.
 
-## Project Overview
+## Goal
 
-The goal of this project is to model customer churn behavior using simulated transaction data inspired by a sports retail environment. The project includes:
+Identify customers likely to churn and understand what behaviors drive retention.
 
-- synthetic customer generation
-- synthetic transaction simulation
-- seasonality and playoff behavior modeling
-- feature engineering using RFM-style metrics
-- churn labeling using 90-day inactivity windows
-- baseline logistic regression model
-- exploratory data analysis in notebooks
+## Dataset
 
-## Current Progress
+Synthetic dataset simulating:
 
-Completed:
-- environment setup in VS Code
-- calendar generation for 2 seasons
-- customer generation
-- transaction generation
-- snapshot feature dataset creation
-- first churn classification model
-- ROC AUC evaluation
-- coefficient interpretation
+- 5,000 customers
+- 2 NBA seasons
+- ~43,000 transactions
+
+Features include:
+- purchase frequency
+- recency
+- monetary value
+- discount usage
+- email signup
+
+## Model
+
+Logistic Regression churn classifier.
+
+Evaluation metrics:
+- Precision
+- Recall
+- F1 Score
+- ROC AUC
 
 ## Project Structure
 
-```text
-churn-predictor/
-├── data/
-├── notebooks/
-├── src/
-├── venv/
+data/
+    calendar.csv
+    customers.csv
+    transactions.csv
+
+src/
+    calendar_generator.py
+    customer_generator.py
+    transaction_generator.py
+
+notebooks/
+    eda_transactions.ipynb
+
+README.md
+requirements.txt
+
+## Future Work
+
+- XGBoost churn model
+- Feature engineering
+- Customer segmentation
+- Interactive churn dashboard
