@@ -30,7 +30,14 @@ def main():
     df = df[df["UnitPrice"] > 0]
 
     print("\nCleaned shape:", df.shape)
+    # Create total purchase value
+    df["total_spent"] = df["Quantity"] * df["UnitPrice"]
 
+# Save cleaned dataset
+    output_path = "data/processed/clean_retail.csv"
+    df.to_csv(output_path, index=False)
+
+    print("\nClean dataset saved to:", output_path)
 
 if __name__ == "__main__":
     main()
